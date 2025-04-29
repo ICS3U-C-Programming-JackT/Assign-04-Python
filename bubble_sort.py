@@ -24,6 +24,16 @@ def bubble_sort(array):
 
     while True:
 
+        # Check array
+        array_sorted = True
+
+        for n in range(1, length):
+            if new_array[n - 1] > new_array[n]:
+                array_sorted = False
+
+        if array_sorted:
+            break
+
         # Sort array
         for x in range(1, length):  # start from 1 to avoid x-1 being -1
             iterations += 1
@@ -44,17 +54,7 @@ def bubble_sort(array):
 
                 # Swap
                 new_array[x - 1], new_array[x] = new_array[x], new_array[x - 1]
-
-        # Check array
-        array_sorted = True
-
-        for n in range(1, length):
-            if new_array[n - 1] > new_array[n]:
-                array_sorted = False
-
-        if array_sorted:
-            break
-
+                
         time.sleep(0.1)
 
     # Return new array as well as number of iterations
